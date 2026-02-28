@@ -71,6 +71,7 @@ source .venv/bin/activate # macOS / Linux
 Install dependencies:
 pip install -r requirements.txt
 
+pip install --upgrade pip setuptools wheel
 (Optional) Make micrograd package importable:
 pip install -e ./src
 
