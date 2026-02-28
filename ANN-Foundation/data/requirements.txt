@@ -1,0 +1,18 @@
+# Core numerical libraries
+numpy==1.25
+pandas==2.1.1
+
+# Plotting
+matplotlib==3.8
+
+# Graph visualization
+graphviz==0.21
+
+# Testing
+pytest==8.0
+
+# Optional: for reproducibility
+random2==1.0.1
+
+# Optional: dataset generation
+scikit-learn==1.3
