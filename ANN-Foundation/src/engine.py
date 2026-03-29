@@ -2,10 +2,6 @@ import math
 
 
 class Value:
-    """
-    Scalar value supporting automatic differentiation.
-    Forms nodes in a computational graph.
-    """
 
     def __init__(self, data, children=(), _op='', label=''):
         self.data = float(data)
@@ -18,8 +14,6 @@ class Value:
 
     def __repr__(self):
         return f"Value(data={self.data:.4f}, grad={self.grad:.4f})"
-
-    # -------- BASIC OPS -------- #
 
     def __add__(self, other):
         other = other if isinstance(other, Value) else Value(other)
@@ -62,8 +56,6 @@ class Value:
         out._backward = _backward
         return out
 
-    # -------- ACTIVATIONS -------- #
-
     def tanh(self):
         t = (math.exp(2*self.data) - 1) / (math.exp(2*self.data) + 1)
         out = Value(t, (self,), 'tanh')
@@ -92,7 +84,6 @@ class Value:
         out._backward = _backward
         return out
 
-    # -------- BACKPROP -------- #
 
     def backward(self):
         topo = []

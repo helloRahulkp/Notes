@@ -3,7 +3,6 @@ from .engine import Value
 
 
 class Neuron:
-    """Single neuron with tanh activation."""
 
     def __init__(self, nin):
         self.w = [Value(random.uniform(-1, 1)) for _ in range(nin)]
@@ -18,7 +17,6 @@ class Neuron:
 
 
 class Layer:
-    """Layer of neurons."""
 
     def __init__(self, nin, nout):
         self.neurons = [Neuron(nin) for _ in range(nout)]
@@ -32,7 +30,6 @@ class Layer:
 
 
 class MLP:
-    """Multi-layer perceptron."""
 
     def __init__(self, nin, nouts):
         sizes = [nin] + nouts
